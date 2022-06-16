@@ -26,18 +26,40 @@
 </head>
 <body>
 
-<div id="container" class="container mt-4 shadow-lg p-3 mb-5 bg-body rounded">
-    <input type="text" class="form-control" style="width: 50%" name="newList" id="newList" placeholder="Lista To-Do">
-    <button id="btnCreate" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalUsuario">
-        Agregar
-    </button>
-    <h2>Lista de To-Do</h2>
+<div id="container" class="container mt-4 shadow-lg p-3 mb-2 bg-body rounded">
+    <div id="ToDoList">
+        <input type="text" class="form-control" style="width: 50%" name="newTodoList" id="newTodoList"
+               placeholder="Nueva Lista To-Do">
+        <button id="btnCreateList" type="button" class="btn btn-primary">
+            Agregar
+        </button>
+    </div>
+    <br>
+    <h2>Listas de To-Do</h2>
+</div>
+
+<div id="containerToDo" class="container  shadow-lg p-3 mb-2 bg-body rounded">
+    <div id="deleteToDoList">
+        <h2 id="ToDoListCreated">Lista</h2>
+        <button id="btnDeleteToDoList" type="button" class="btn btn-outline-danger">
+            Eliminar To-Do List
+        </button>
+    </div>
+    <br>
+    <div id="ToDo">
+        <input type="text" class="form-control" style="width: 50%" name="newTodo" id="newTodo"
+               placeholder="Nueva To-Do">
+        <button id="btnCreateToDoList" type="button" class="btn btn-primary">
+            Agregar
+        </button>
+    </div>
+    <br>
     <table id="listToDo" class="table mt-2 table-bordered table-striped" style="text-align: center">
         <thead>
         <tr class="text-center">
             <th>ID</th>
             <th>Tarea</th>
-            <th>Completado</th>
+            <th>¿Completado?</th>
             <th>Acciones</th>
         </tr>
         </thead>
@@ -46,79 +68,11 @@
     </table>
 </div>
 
-<div id="modalUsuario" class="modal fade" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header bg-primary text-white">
-                <h5 class="modal-title" id="exampleModalLabel">Usuario</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <form style="padding: 1rem">
-                <div class="mb-3">
-                    <label for="nombre" class="col-form-label">Nombre:</label>
-                    <input id="nombre" type="text" class="form-control" autofocus required>
-                </div>
-                <div class="mb-3">
-                    <label for="email" class="col-form-label">Email</label>
-                    <input id="email" type="email" class="form-control" required>
-                </div>
-                <div class="mb-3">
-                    <label for="prioridad" class="col-form-label">Prioridad</label>
-                    <input id="prioridad" type="number" class="form-control" required>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                    <button type="submit" class="btn btn-primary">Guardar</button>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
-
-<div id="modalUsuarioBuscar" class="modal fade" tabindex="-1" aria-labelledby="exampleModalLabelSearch" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header bg-primary text-white">
-                <h5 class="modal-title" id="exampleModalLabelSearch">Usuario a buscar</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="mb-3" style="padding: 1rem">
-                <label for="email" class="col-form-label">Email</label>
-                <input id="emailBuscar" type="email" class="form-control" required>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                <button onclick="buscar()" class="btn btn-primary">Buscar</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div id="modalUsuarioEliminar" class="modal fade" tabindex="-1" aria-labelledby="exampleModalLabelSearch" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header bg-primary text-white">
-                <h5 class="modal-title" id="exampleModalLabelEliminar">Usuario a eliminar</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="mb-3" style="padding: 1rem">
-                <label for="email" class="col-form-label">Email</label>
-                <input id="emailEliminar" type="email" class="form-control" required>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                <button onclick="eliminar()" class="btn btn-primary">Eliminar</button>
-            </div>
-        </div>
-    </div>
-</div>
-
 <!-- Option 1: Bootstrap Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
         crossorigin="anonymous"></script>
 <!-- JavaScript -->
-
 
 <script src="cliente.js"></script>
 </body>
