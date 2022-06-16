@@ -1,0 +1,12 @@
+body {
+    background-color: #f7f6f6;
+}
+
+h2{
+    text-align: center;
+}
+
+table thead {
+    background-color: #0a4f70;
+    color: white;
+}
