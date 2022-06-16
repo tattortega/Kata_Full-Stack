@@ -1,9 +1,21 @@
 body {
-    background-color: #f7f6f6;
+    background-color: aliceblue;
 }
 
-h2{
+#ToDo, #ToDoList {
+    display: flex;
+}
+
+#btnCreateList, #btnCreateToDoList {
+    margin-left: 1rem;
+}
+
+h2 {
     text-align: center;
+}
+
+#ToDoListCreated {
+    text-align: start;
 }
 
 table thead {
