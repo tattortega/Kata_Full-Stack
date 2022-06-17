@@ -6,10 +6,12 @@ body {
     display: flex;
 }
 
-#btnCreateList, #btnCreateToDoList {
+#btnCreateList {
     margin-left: 1rem;
 }
-
+#btnCreateToDo{
+    margin-top: 1rem;
+}
 h2 {
     text-align: center;
 }
