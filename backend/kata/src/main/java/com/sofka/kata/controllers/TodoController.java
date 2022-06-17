@@ -17,8 +17,8 @@ import java.sql.SQLException;
  * @version 1.0.0 2022-06-16
  * @since 1.0.0
  */
+@CrossOrigin
 @RestController
-@CrossOrigin(origins = "http://localhost:3000", methods= {RequestMethod.GET,RequestMethod.POST,RequestMethod.DELETE,RequestMethod.PUT})
 @RequestMapping("/todo")
 public class TodoController {
 
@@ -124,7 +124,6 @@ public class TodoController {
      * @param todoDto Objeto TodoDto
      * @return Objeto Response en formato JSON
      */
-    @CrossOrigin
     @PostMapping()
     public ResponseEntity<Response> saveTodo(@RequestBody TodoDto todoDto) {
         response.restart();
@@ -147,7 +146,6 @@ public class TodoController {
      * @param id   Long
      * @return Objeto Response en formato JSON
      */
-    @CrossOrigin
     @PutMapping("/{id}")
     public ResponseEntity<Response> updateTodo(@RequestBody TodoDto todo, @PathVariable(value = "id") Long id) {
         response.restart();
@@ -169,7 +167,6 @@ public class TodoController {
      * @param id del todo que se desea eliminar
      * @return Objeto Response en formato JSON
      */
-    @CrossOrigin
     @DeleteMapping(value = "/{id}")
     public ResponseEntity<Response> deleteTodo(@PathVariable("id") Long id) {
         response.restart();

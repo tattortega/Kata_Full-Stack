@@ -10,8 +10,15 @@ import org.springframework.web.bind.annotation.*;
 
 import java.sql.SQLException;
 
+/**
+ * Controlador para el todoList
+ *
+ * @author Ricardo Ortega <tattortega.28@gmail.com>
+ * @version 1.0.0 2022-06-16
+ * @since 1.0.0
+ */
+@CrossOrigin
 @RestController
-@CrossOrigin(origins = {"http://localhost:3000"})
 @RequestMapping("/todo-list")
 public class TodoListController {
 
@@ -117,7 +124,6 @@ public class TodoListController {
      * @param todoList Objeto TodoList
      * @return Objeto Response en formato JSON
      */
-    @CrossOrigin
     @PostMapping()
     public ResponseEntity<Response> saveTodoList(@RequestBody TodoList todoList) {
         response.restart();
@@ -140,7 +146,6 @@ public class TodoListController {
      * @param id       Long
      * @return Objeto Response en formato JSON
      */
-    @CrossOrigin
     @PutMapping("/{id}")
     public ResponseEntity<Response> updateTodoList(@RequestBody TodoList todoList, @PathVariable(value = "id") Long id) {
         response.restart();
@@ -162,7 +167,6 @@ public class TodoListController {
      * @param id del todo que se desea eliminar
      * @return Objeto Response en formato JSON
      */
-    @CrossOrigin
     @DeleteMapping(value = "/{id}")
     public ResponseEntity<Response> deleteTodoList(@PathVariable("id") Long id) {
         response.restart();
