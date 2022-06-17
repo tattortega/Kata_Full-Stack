@@ -26,46 +26,21 @@
 </head>
 <body>
 
-<div id="container" class="container mt-4 shadow-lg p-3 mb-2 bg-body rounded">
-    <div id="ToDoList">
-        <input type="text" class="form-control" style="width: 50%" name="newTodoList" id="newTodoList"
-               placeholder="Nueva Lista To-Do">
-        <button id="btnCreateList" type="button" class="btn btn-primary">
-            Agregar
-        </button>
-    </div>
+<div id="containerNewToDoList" class="container mt-4 shadow-lg p-3 mb-2 bg-body rounded">
+    <form>
+        <div id="ToDoList">
+            <input type="text" class="form-control" style="width: 50%" name="newTodoList" id="newTodoList"
+                   placeholder="Nueva Lista To-Do" required>
+            <button id="btnCreateList" type="submit" class="btn btn-primary">
+                Agregar
+            </button>
+        </div>
+    </form>
     <br>
-    <h2>Listas de To-Do</h2>
+    <h2>Listas To-Do</h2>
 </div>
 
-<div id="containerToDo" class="container  shadow-lg p-3 mb-2 bg-body rounded">
-    <div id="deleteToDoList">
-        <h2 id="ToDoListCreated">Lista</h2>
-        <button id="btnDeleteToDoList" type="button" class="btn btn-outline-danger">
-            Eliminar To-Do List
-        </button>
-    </div>
-    <br>
-    <div id="ToDo">
-        <input type="text" class="form-control" style="width: 50%" name="newTodo" id="newTodo"
-               placeholder="Nueva To-Do">
-        <button id="btnCreateToDoList" type="button" class="btn btn-primary">
-            Agregar
-        </button>
-    </div>
-    <br>
-    <table id="listToDo" class="table mt-2 table-bordered table-striped" style="text-align: center">
-        <thead>
-        <tr class="text-center">
-            <th>ID</th>
-            <th>Tarea</th>
-            <th>¿Completado?</th>
-            <th>Acciones</th>
-        </tr>
-        </thead>
-        <tbody id="tbody">
-        </tbody>
-    </table>
+<div id="container" class="container shadow-lg p-3 mb-2 bg-body rounded">
 </div>
 
 <!-- Option 1: Bootstrap Bundle with Popper -->
@@ -73,7 +48,6 @@
         integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
         crossorigin="anonymous"></script>
 <!-- JavaScript -->
-
-<script src="cliente.js"></script>
+<script src="./js/app.js"></script>
 </body>
 </html>
