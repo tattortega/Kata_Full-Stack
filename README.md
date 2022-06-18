@@ -33,5 +33,8 @@ Reto final de un API en Java con Spring Boot y el frontend con JavaScript
 
 6. Abra la carpeta frontend y ejecute el index.html
 
+## Video de sustentacion
++ https://youtu.be/gZQScyAPex8
+
 ## Desarrollador
 Ricardo Ortega - tattortega.28@gmail.com
