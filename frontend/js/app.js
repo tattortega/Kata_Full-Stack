@@ -94,3 +94,85 @@ async function createList(newList) {
         })
 }
 
+container.addEventListener("click", (e) => {
+    if (e.target.classList[0] === "deleteToDoList") {
+        deleteList(e.target.previousElementSibling.textContent)
+    }
+    if (e.target.classList[0] === "saveToDo") {
+        e.preventDefault()
+        let data = {
+            name: e.target.previousElementSibling.value,
+            id: e.path[0].value
+        }
+        createToDo(data)
+    }
+    if (e.target.classList[0] === "deleteToDo") {
+        deleteToDo(e.target.parentElement.parentElement.children[0].textContent)
+    }
+})
+
+
+async function deleteList(id) {
+    res = await fetch(`${api}/todo-list/${id}`, {
+        method: "DELETE",
+        headers: {
+            'Content-Type': 'application/json'
+        },
+    })
+        .then(response => response.json())
+        .then(() => {
+            location.reload()
+            getData()
+        })
+        .catch(err => {
+            let message = err.statusText || "Ocurrió un error";
+            container.insertAdjacentHTML("afterend", `<p style="text-align: center"><b>Error ${err.status}: ${message}</b></p>`);
+        })
+}
+
+async function createToDo({name, id}) {
+    res = await fetch(`${api}/todo`, {
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            name: name,
+            completed: false,
+            todoListId: id
+        })
+    })
+        .then(response => response.json())
+        .then(() => {
+            location.reload()
+            getData()
+        })
+        .catch(err => {
+            let message = err.statusText || "Ocurrió un error";
+            container.insertAdjacentHTML("afterend", `<p style="text-align: center"><b>Error ${err.status}: ${message}</b></p>`);
+        })
+}
+
+
+/**
+ * Funcion para eliminar un toDo
+ * @param id Identificador del toDo
+ * @returns {Promise<void>}
+ */
+async function deleteToDo(id) {
+    res = await fetch(`${api}/todo/${id}`, {
+        method: "DELETE",
+        headers: {
+            'Content-Type': 'application/json'
+        },
+    })
+        .then(response => response.json())
+        .then(() => {
+            location.reload()
+            getData()
+        })
+        .catch(err => {
+            let message = err.statusText || "Ocurrió un error";
+            container.insertAdjacentHTML("afterend", `<p style="text-align: center"><b>Error ${err.status}: ${message}</b></p>`);
+        })
+}
